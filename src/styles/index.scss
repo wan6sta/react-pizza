@@ -2,15 +2,22 @@
 @import '_reset.scss';
 
 @import 'blocks/_header.scss';
+@import 'blocks/_mainSort.scss';
+@import 'blocks/_main.scss';
 
 body {
   font-size: 18px;
   font-family: 'Nunito', sans-serif;
+  padding: 40px 0;
+
+  background: #FBE7B5;
 }
 
-container {
-  width: 1420px;
+.container {
+  max-width: 1420px;
   margin: 0 auto;
   padding: 0 10px;
 }
+
+
 

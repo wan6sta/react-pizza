@@ -1,13 +1,62 @@
-headerMain {
+.headerMain {
   &__row {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    border-radius: 10px 10px 0 0;
 
+    background: #fff;
   }
 
   &__logoWrapper {
+    display: flex;
+    align-items: center;
+    column-gap: 10px;
 
+    user-select: none;
+    img {
+      width: 100px;
+    }
+
+    p {
+      font-weight: 600;
+    }
   }
 
   &__buttons {
+    display: flex;
+    align-items: center;
+    column-gap: 10px;
 
+    & a {
+      padding: 5px;
+      border-radius: 10px;
+    }
+    & > a {
+      font-weight: 700;
+    }
+
+    & a {
+      cursor: pointer;
+      transition: 0.2s ease-in-out;
+    }
+
+    & a:hover {
+      transform: scale(105%);
+      color: #FF756B;
+    }
+  }
+
+  &__busketButton {
+    display: flex;
+    align-items: center;
+    font-weight: 500;
+
+    img {
+      width: 25px;
+      margin-right: 2px;
+
+      user-select: none;
+    }
   }
 }
