@@ -1,31 +1,44 @@
 import up from '../../assets/images/up.svg'
+import {useState} from "react";
 
 const MainSort = () => {
+
+  const [active, setActive] = useState(0);
+  const [sortList, setSortList] = useState([
+    'Все', 'Мясные', 'Вегетаринские', 'Гриль', 'Острые', 'Закрытые'
+  ]);
+  const [isVisible, setIsVisible] = useState(false);
+  const [list, setList] = useState(['популярности', 'цене', 'алфавиту']);
+  const [thisSort, setThisSort] = useState('популярности');
+  const [activeList, setActiveList] = useState(0);
+
   return <section className='mainSort'>
     <div className="container">
       <div className="mainSort__row">
         <div className="mainSort__sortList">
           <ul>
-            <li><a className='link__active'>Все</a></li>
-            <li><a>Мясные</a></li>
-            <li><a>Вегетарианские</a></li>
-            <li><a>Гриль</a></li>
-            <li><a>Острые</a></li>
-            <li><a>Закрытые</a></li>
+            {sortList.map((v, id) => <li key={id} onClick={() => setActive(id)}><a
+              className={active == id ? 'link__active' : ''}>{v}</a></li>)}
           </ul>
         </div>
 
-        <div className="mainSort__sort">
+        <div className="mainSort__sort" onClick={() => setIsVisible(!isVisible)}>
           <img src={up} alt=""/>
           <span>Сортировка по: </span>
-          <a>популярности</a>
+          <a>{thisSort}</a>
         </div>
 
-        <div className="mainSort__sortAppear">
-          <a>популярности</a>
-          <a>цене</a>
-          <a>алфавиту</a>
-        </div>
+        {isVisible && (<div className='mainSort__sortAppear'>
+          {list.map((v, id) => <a
+            className={(activeList == id) && 'mainSort__sortAppear_active'}
+
+            onClick={() => {
+              setThisSort(v);
+              setIsVisible(!isVisible);
+              setActiveList(id);
+            }} key={id}>{v}</a>)}
+        </div>)}
+
       </div>
     </div>
   </section>

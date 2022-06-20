@@ -37,9 +37,11 @@
   }
 
   &__cardSort {
+    width: 250px;
     display: flex;
     flex-direction: column;
     row-gap: 10px;
+    flex-grow: 1;
     background-color: #E6E7E8;
     border-radius: 10px;
     padding: 5px;
@@ -57,8 +59,13 @@
     display: flex;
     align-items: center;
     column-gap: 5px;
+    flex-grow: 1;
 
     & a {
+      display: flex;
+      flex-grow: 1;
+      align-items: center;
+      justify-content: center;
       cursor: pointer;
       padding: 5px 10px;
       font-size: 16px;
@@ -76,6 +83,10 @@
     column-gap: 5px;
 
     & a {
+      display: flex;
+      flex-grow: 1;
+      align-items: center;
+      justify-content: center;
       cursor: pointer;
       padding: 5px 10px;
       font-size: 16px;
@@ -112,11 +123,15 @@
       color: #FF756B;
       font-weight: 500;
       font-size: 16px;
-      transition: 0.2s ease-in-out;
+      transition: 0.2s ease-in-out, transform 0s ease-in-out;
       &:hover {
         background-color: #FF756B;
         color: #fff;
       }
+    }
+
+    &Wrapper:active {
+      transform: translateY(1px);
     }
 
     &Add {
@@ -130,13 +145,16 @@
 
     &Number {
 
-      display: inline-block;
-      height: 20px;
-      width: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 5px;
       text-align: center;
-      line-height: 20px;
+      width: 25px;
+      height: 25px;
+      font-weight: 600;
       border-radius: 50%;
-      font-size: 14px;
+      font-size: 16px;
       color: white;
       background-color: #FF756B;
     }

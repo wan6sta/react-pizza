@@ -44,6 +44,7 @@
   }
 
   &__sort {
+    user-select: none;
     padding: 5px 0;
     cursor: pointer;
     &:hover {
@@ -64,25 +65,36 @@
   }
 
   &__sortAppear {
+
     position: absolute;
-    top: 70px;
-    right: 30px;
+    top: 60px;
+    right: 40px;
     display: flex;
     flex-direction: column;
     cursor: pointer;
     background-color: #fff;
     border-radius: 10px;
-    opacity: 0;
-    filter: drop-shadow(5px 5px 7px rgba(0, 0, 0, 0.1));
+
+    filter: drop-shadow(5px 5px 7px rgba(0, 0, 0, 0.2));
     & a {
       padding: 10px 20px;
 
       transition: 0.2s ease-in-out;
     }
 
+    &_active {
+      color: #FF756B;
+      background-color: rgba(255, 117, 107, 0.1);
+    }
+
     & a:hover {
       color: #FF756B;
       background-color: rgba(255, 117, 107, 0.1);
     }
+    &_visible {
+      opacity: 1;
+      display: flex;
+    }
   }
 }
+
